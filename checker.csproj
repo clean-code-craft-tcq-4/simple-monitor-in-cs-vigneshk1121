@@ -8,12 +8,9 @@
     <ProjectGuid>{25D360F8-0493-4DBF-96B6-C45B180970AC}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ChargeRateChecker.cs" />
     <Compile Include="checker.cs" />
     <Compile Include="CheckerBase.cs" />
     <Compile Include="Limits.cs" />
-    <Compile Include="SocChecker.cs" />
-    <Compile Include="TemperatureChecker.cs" />
   </ItemGroup>
   <Target Name="Build">
     <Csc Sources="@(Compile)" />  
