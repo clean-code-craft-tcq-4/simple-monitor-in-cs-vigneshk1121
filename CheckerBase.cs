@@ -1,4 +1,6 @@
-﻿namespace Checker
+﻿using System;
+
+namespace Checker
 {
     public class CheckerBase
     {
