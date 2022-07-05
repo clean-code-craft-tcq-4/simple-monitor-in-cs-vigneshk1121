@@ -1,8 +1,17 @@
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ProjectGuid>{25D360F8-0493-4DBF-96B6-C45B180970AC}</ProjectGuid>
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="checker.cs"/>
+    <Compile Include="checker.cs" />
+    <Compile Include="CheckerBase.cs" />
   </ItemGroup>
   <Target Name="Build">
-    <Csc Sources="@(Compile)"/>  
+    <Csc Sources="@(Compile)" />  
   </Target>
 </Project>
