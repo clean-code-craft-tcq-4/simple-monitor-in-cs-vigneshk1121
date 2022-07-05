@@ -1,13 +1,13 @@
 ﻿namespace Checker
 {
 
-    public abstract class CheckerBase
+    public class CheckerBase
     {
         public float? MinValue { get; set; }
 
         public float MaxValue { get; set; }
 
-        protected CheckerBase(float? minValue, float maxValue)
+        public CheckerBase(float minValue, float maxValue)
         {
             MinValue = minValue;
             MaxValue = maxValue;
@@ -21,7 +21,7 @@
 
     public class TemperatureChecker : CheckerBase
     {
-        public TemperatureChecker(float minValue, float maxValue) : base(minValue, maxValue)
+        public TemperatureChecker() : base(Limits.MIN_TEMPERATURE, Limits.MAX_TEMPERATURE)
         {
 
         }
@@ -29,17 +29,22 @@
 
     public class SocChecker : CheckerBase
     {
-        public SocChecker(float minValue, float maxValue) : base(minValue, maxValue)
+        public SocChecker() : base(Limits.MIN_SOC, Limits.MAX_SOC)
         {
 
         }
     }
 
-    public class ChargeRateChecker : CheckerBase
+    public class ChargeRateChecker
     {
-        public ChargeRateChecker(float? minValue, float maxValue) : base(minValue, maxValue)
+        public ChargeRateChecker()
         {
 
+        }
+
+        public bool IsValueWithinRange(float value)
+        {
+            return (value > Limits.PERMISSIBLE_CHARGE_RATE);
         }
     }
 }

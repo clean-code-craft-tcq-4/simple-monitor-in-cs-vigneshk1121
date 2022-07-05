@@ -6,7 +6,9 @@ namespace Checker
     {
         static bool BatteryIsOk(float temperature, float soc, float chargeRate)
         {
-            return !(new TemperatureChecker(0, 45).IsValueWithinRange(temperature) || new SocChecker(20, 80).IsValueWithinRange(soc) || new ChargeRateChecker(null, 0.8f).IsValueWithinRange(chargeRate));
+            return !(new TemperatureChecker().IsValueWithinRange(temperature)
+                || new SocChecker().IsValueWithinRange(soc)
+                || new ChargeRateChecker().IsValueWithinRange(chargeRate));
         }
 
         static void ExpectedResult(bool expression, bool expectedResult)
@@ -26,6 +28,4 @@ namespace Checker
             return 0;
         }
     }
-
-
 }
